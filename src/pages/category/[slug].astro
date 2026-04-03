@@ -1,0 +1,43 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PostCard from "../../components/PostCard.astro";
+import Sidebar from "../../components/Sidebar.astro";
+import {
+  getAllCategories,
+  getAllTags,
+  getCategoryUrl,
+  getPostsByCategorySlug,
+  getRecentPosts
+} from "../../lib/content";
+
+export async function getStaticPaths() {
+  const categories = await getAllCategories();
+  return categories.map((category) => ({
+    params: { slug: category.slug },
+    props: { categoryName: category.name }
+  }));
+}
+
+const { categoryName } = Astro.props;
+const slug = Astro.params.slug;
+const posts = slug ? await getPostsByCategorySlug(slug) : [];
+const recentPosts = await getRecentPosts(5);
+const categories = await getAllCategories();
+const tags = await getAllTags();
+---
+
+<Layout pageTitle={`Category - ${categoryName}`}>
+  <div class="max-width">
+    <section id="main" class="main" role="main">
+      <header class="archive-header">
+        <h1>Category: {categoryName}</h1>
+      </header>
+      <div class="loop-container">
+        {posts.map((post) => <PostCard post={post} />)}
+      </div>
+    </section>
+
+    <Sidebar recentPosts={recentPosts} categories={categories} tags={tags} />
+  </div>
+</Layout>
+

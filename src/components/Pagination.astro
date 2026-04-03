@@ -1,0 +1,64 @@
+---
+type Props = {
+  currentPage: number;
+  totalPages: number;
+};
+
+const { currentPage, totalPages } = Astro.props;
+
+if (totalPages <= 1) {
+  return null;
+}
+
+const getPageHref = (page: number) => (page === 1 ? "/" : `/page/${page}/`);
+
+const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
+
+const visiblePages = pageNumbers.filter((page) => {
+  if (totalPages <= 5) {
+    return true;
+  }
+
+  return page === 1 || page === totalPages || Math.abs(page - currentPage) <= 1;
+});
+
+const pagesWithGaps: Array<number | "dots"> = [];
+
+for (const page of visiblePages) {
+  const previous = pagesWithGaps[pagesWithGaps.length - 1];
+
+  if (typeof previous === "number" && page - previous > 1) {
+    pagesWithGaps.push("dots");
+  }
+
+  pagesWithGaps.push(page);
+}
+---
+
+<nav class="navigation pagination" aria-label="Posts">
+  <h2 class="screen-reader-text">Posts navigation</h2>
+  <div class="nav-links">
+    {currentPage > 1 && (
+      <a class="prev page-numbers" href={getPageHref(currentPage - 1)}>
+        Previous
+      </a>
+    )}
+
+    {pagesWithGaps.map((entry) =>
+      entry === "dots" ? (
+        <span class="page-numbers dots">&hellip;</span>
+      ) : entry === currentPage ? (
+        <span aria-current="page" class="page-numbers current">{entry}</span>
+      ) : (
+        <a class="page-numbers" href={getPageHref(entry)}>{entry}</a>
+      )
+    )}
+
+    {currentPage < totalPages && (
+      <a class="next page-numbers" href={getPageHref(currentPage + 1)}>
+        Next
+      </a>
+    )}
+  </div>
+</nav>
+

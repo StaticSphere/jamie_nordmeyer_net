@@ -1,0 +1,53 @@
+---
+import type { PostEntry, Taxonomy } from "../lib/content";
+import { getCategoryUrl, getPostUrl, getTagUrl } from "../lib/content";
+
+type Props = {
+  recentPosts: PostEntry[];
+  categories: Taxonomy[];
+  tags: Taxonomy[];
+};
+
+const { recentPosts, categories, tags } = Astro.props;
+
+const maxTagCount = tags.reduce((max, tag) => Math.max(max, tag.count), 1);
+
+const getTagSize = (count: number) => {
+  const min = 8;
+  const max = 20;
+  const ratio = count / maxTagCount;
+  return `${Math.round(min + ratio * (max - min))}pt`;
+};
+---
+
+<aside class="sidebar sidebar-primary" id="sidebar-primary" role="complementary">
+  <h2 class="screen-reader-text">Sidebar</h2>
+
+  <section class="widget widget_recent_entries">
+    <h3 class="widget-title">Recent Posts</h3>
+    <ul>
+      {recentPosts.map((post) => (
+        <li><a href={getPostUrl(post)}>{post.data.title}</a></li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="widget widget_categories">
+    <h3 class="widget-title">Categories</h3>
+    <ul>
+      {categories.map((category) => (
+        <li><a href={getCategoryUrl(category.slug)}>{category.name}</a></li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="widget widget_tag_cloud">
+    <h3 class="widget-title">Tags</h3>
+    <div class="tagcloud">
+      {tags.map((tag) => (
+        <a href={getTagUrl(tag.slug)} style={`font-size: ${getTagSize(tag.count)};`}>{tag.name}</a>
+      ))}
+    </div>
+  </section>
+</aside>
+

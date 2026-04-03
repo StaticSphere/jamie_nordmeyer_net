@@ -1,0 +1,46 @@
+---
+import type { PostEntry } from "../lib/content";
+import { getPostUrl } from "../lib/content";
+
+type Props = {
+  post: PostEntry;
+  showExcerpt?: boolean;
+};
+
+const { post, showExcerpt = true } = Astro.props;
+const publishedDate = post.data.date.toLocaleDateString("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric"
+});
+const postUrl = getPostUrl(post);
+---
+
+<div class="entry">
+  <article>
+    {post.data.featuredImage && (
+      <div class="featured-image">
+        <a href={postUrl} aria-label={post.data.title}>
+          <img src={post.data.featuredImage} alt={post.data.featuredImageAlt ?? ""} loading="lazy" />
+        </a>
+      </div>
+    )}
+
+    <div class="post-container">
+      <header class="post-header">
+        <h2 class="post-title"><a href={postUrl}>{post.data.title}</a></h2>
+        <div class="post-byline">Published {publishedDate} by {post.data.author}</div>
+      </header>
+
+      {showExcerpt ? (
+        <div class="post-content">
+          <p>{post.data.excerpt}</p>
+          <div class="more-link-wrapper">
+            <a class="more-link" href={postUrl}>Continue reading</a>
+          </div>
+        </div>
+      ) : null}
+    </div>
+  </article>
+</div>
+

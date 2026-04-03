@@ -1,0 +1,105 @@
+---
+import { render } from "astro:content";
+import Layout from "../../../../layouts/Layout.astro";
+import Sidebar from "../../../../components/Sidebar.astro";
+import {
+  getAllCategories,
+  getAllPosts,
+  getAllTags,
+  getCategoryUrl,
+  getEntrySlug,
+  getPostBySlug,
+  getRecentPosts,
+  getTagUrl
+} from "../../../../lib/content";
+
+export async function getStaticPaths() {
+  const posts = await getAllPosts();
+
+  return posts.map((post) => {
+    const year = String(post.data.date.getFullYear());
+    const month = String(post.data.date.getMonth() + 1).padStart(2, "0");
+    const day = String(post.data.date.getDate()).padStart(2, "0");
+
+    return {
+      params: {
+        year,
+        month,
+        day,
+        slug: getEntrySlug(post)
+      }
+    };
+  });
+}
+
+const slug = Astro.params.slug;
+const post = slug ? await getPostBySlug(slug) : undefined;
+
+if (!post) {
+  throw new Error(`Post not found for slug: ${slug}`);
+}
+
+const { Content } = await render(post);
+const recentPosts = await getRecentPosts(5);
+const categories = await getAllCategories();
+const tags = await getAllTags();
+const publishedDate = post.data.date.toLocaleDateString("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric"
+});
+const categoryTerms = post.data.categories;
+const tagTerms = post.data.tags;
+---
+
+<Layout pageTitle={`JamieNordmeyer.net - ${post.data.title}`}>
+  <div class="max-width">
+    <main id="main" class="main" role="main">
+      <article class="entry">
+        {post.data.featuredImage && (
+          <div class="featured-image">
+            <img src={post.data.featuredImage} alt={post.data.featuredImageAlt ?? ""} />
+          </div>
+        )}
+        <div class="post-container post-container-single">
+          <header class="post-header">
+            <h1 class="post-title">{post.data.title}</h1>
+            <div class="post-byline">Published {publishedDate} by {post.data.author}</div>
+          </header>
+
+          <div class="post-content">
+            <Content />
+          </div>
+
+          <footer class="post-meta">
+            {categoryTerms.length > 0 && (
+              <p class="post-categories">
+                Categories: {categoryTerms.map((category: (typeof categoryTerms)[number], index: number) => (
+                  <>
+                    {index > 0 ? ", " : ""}
+                    <a href={getCategoryUrl(category.slug)}>{category.name}</a>
+                  </>
+                ))}
+              </p>
+            )}
+            {tagTerms.length > 0 && (
+              <p class="post-tags">
+                Tags: {tagTerms.map((tag: (typeof tagTerms)[number], index: number) => (
+                  <>
+                    {index > 0 ? ", " : ""}
+                    <a href={getTagUrl(tag.slug)}>{tag.name}</a>
+                  </>
+                ))}
+              </p>
+            )}
+          </footer>
+        </div>
+      </article>
+    </main>
+
+    <Sidebar recentPosts={recentPosts} categories={categories} tags={tags} />
+  </div>
+</Layout>
+
+
+
