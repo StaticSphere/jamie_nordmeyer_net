@@ -10,7 +10,13 @@ if (totalPages <= 1) {
   return null;
 }
 
-const getPageHref = (page: number) => (page === 1 ? "/" : `/page/${page}/`);
+const withBase = (pathname: string) => {
+  const baseUrl = import.meta.env.BASE_URL ?? "/";
+  const normalizedPath = pathname.startsWith("/") ? pathname.slice(1) : pathname;
+  return `${baseUrl}${normalizedPath}`;
+};
+
+const getPageHref = (page: number) => (page === 1 ? withBase("/") : withBase(`/page/${page}/`));
 
 const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
 

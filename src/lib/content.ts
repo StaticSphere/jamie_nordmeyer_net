@@ -24,13 +24,19 @@ type TaxonomyRef = {
 
 const sortPostsByDateDesc = (a: PostEntry, b: PostEntry) => b.data.date.getTime() - a.data.date.getTime();
 
+function withBase(pathname: string): string {
+  const baseUrl = import.meta.env.BASE_URL ?? "/";
+  const normalizedPath = pathname.startsWith("/") ? pathname.slice(1) : pathname;
+  return `${baseUrl}${normalizedPath}`;
+}
+
 export function getEntrySlug(entry: Pick<PostEntry | PageEntry, "id">): string {
   const lastSegment = entry.id.split("/").pop() ?? entry.id;
   return lastSegment.replace(/\.[^.]+$/, "");
 }
 
 export function getPostUrl(post: PostEntry): string {
-  return post.data.wpLink;
+  return withBase(post.data.wpLink);
 }
 
 // export function getPageUrl(page: PageEntry): string {
@@ -38,11 +44,11 @@ export function getPostUrl(post: PostEntry): string {
 // }
 
 export function getCategoryUrl(slug: string): string {
-  return `/category/${slug}/`;
+  return withBase(`/category/${slug}/`);
 }
 
 export function getTagUrl(slug: string): string {
-  return `/tag/${slug}/`;
+  return withBase(`/tag/${slug}/`);
 }
 
 export async function getAllPosts(): Promise<PostEntry[]> {
