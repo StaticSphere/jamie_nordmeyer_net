@@ -55,6 +55,23 @@ export async function getPostBySlug(slug: string): Promise<PostEntry | undefined
   return posts.find((post) => getEntrySlug(post) === slug);
 }
 
+export async function getPostByDateAndSlug(
+  year: string,
+  month: string,
+  day: string,
+  slug: string
+): Promise<PostEntry | undefined> {
+  const posts = await getAllPosts();
+
+  return posts.find((post) => {
+    const postYear = String(post.data.date.getFullYear());
+    const postMonth = String(post.data.date.getMonth() + 1).padStart(2, "0");
+    const postDay = String(post.data.date.getDate()).padStart(2, "0");
+
+    return postYear === year && postMonth === month && postDay === day && getEntrySlug(post) === slug;
+  });
+}
+
 export async function getRecentPosts(limit = 5): Promise<PostEntry[]> {
   const posts = await getAllPosts();
   return posts.slice(0, limit);
@@ -133,6 +150,3 @@ export async function getPaginatedPosts(
     totalPages
   };
 }
-
-
-

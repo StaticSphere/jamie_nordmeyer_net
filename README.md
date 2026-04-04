@@ -17,7 +17,7 @@ This Astro project uses **local Markdown content files** and no longer depends o
 
 ## Content locations
 
-- Posts: `src/content/posts/*.md`
+- Posts: `src/content/posts/YYYY/MM/*.md` (for example, `src/content/posts/2018/10/intern-talks.md`)
 - Pages: `src/content/pages/*.md`
 - Uploaded media: `public/wp-content/uploads/**`
 
@@ -38,7 +38,7 @@ pnpm preview
 ## Key files
 
 - `src/content.config.ts` - Astro content collection schemas
-- `src/content/posts/` - local post content
+- `src/content/posts/` - local post content organized by year/month
 - `src/content/pages/` - local page content
 - `src/lib/content.ts` - local content query and pagination helpers
 - `src/components/PostCard.astro` - homepage/archive post cards

@@ -8,7 +8,7 @@ import {
   getAllTags,
   getCategoryUrl,
   getEntrySlug,
-  getPostBySlug,
+  getPostByDateAndSlug,
   getRecentPosts,
   getTagUrl
 } from "../../../../lib/content";
@@ -33,10 +33,15 @@ export async function getStaticPaths() {
 }
 
 const slug = Astro.params.slug;
-const post = slug ? await getPostBySlug(slug) : undefined;
+const year = Astro.params.year;
+const month = Astro.params.month;
+const day = Astro.params.day;
+
+const post =
+  slug && year && month && day ? await getPostByDateAndSlug(year, month, day, slug) : undefined;
 
 if (!post) {
-  throw new Error(`Post not found for slug: ${slug}`);
+  throw new Error(`Post not found for route params: ${year}/${month}/${day}/${slug}`);
 }
 
 const { Content } = await render(post);
