@@ -3,7 +3,7 @@ title: "Whaddaya Mean “System.Object” Is Not Defined?!?"
 excerpt: "Every once in a blue moon or two, Visual Studio can get itself into a bizarre state where it’s not resolving the most basic types,…"
 date: "2022-07-31T20:25:44"
 author: "Jamie Nordmeyer"
-featuredImage: "/wp-content/uploads/2022/07/pexels-yan-krukov-4458411.jpg"
+featuredImage: "../../../../assets/images/2022/07/pexels-yan-krukov-4458411.jpg"
 featuredImageAlt: ""
 wpLink: "/2022/07/31/whaddaya-mean-system-object-is-not-defined/"
 categories:
@@ -16,7 +16,7 @@ tags:
 
 Every once in a blue moon or two, Visual Studio can get itself into a bizarre state where it’s not resolving the most basic types, like `System.Object`. You’ve confirmed that you’re referencing the latest version of.NET or.NET Core, you’ve cleaned and rebuilt your solution, and you’ve even rebooted your computer… all to no avail. What gives?!? Visual Studio ends up looking something like this:
 
-!\[](/wp-content/uploads/2022/07/image.png)
+!\[](../../../../assets/images/2022/07/image.png)
 
 Wait… what? “Predefined type ‘System.Object’ is not defined or imported”?!? This is purely a designer thing. If you try to build and/or run the solution, everything works (so long as you don’t have any genuine compiler errors, naturally…)
 

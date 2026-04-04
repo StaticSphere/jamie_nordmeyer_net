@@ -3,7 +3,7 @@ title: "Programmer/Technical Podcasts"
 excerpt: "Podcasts are a great way to pass the time when you’re doing chores, doing your daily commute, or even walking the doggo’s. This will be…"
 date: "2021-09-11T14:52:09"
 author: "Jamie Nordmeyer"
-featuredImage: "/wp-content/uploads/2021/09/pexels-pixabay-270288-scaled.jpg"
+featuredImage: "../../../../assets/images/2021/09/pexels-pixabay-270288-scaled.jpg"
 featuredImageAlt: ""
 wpLink: "/2021/09/11/programmer-technical-podcasts/"
 categories:

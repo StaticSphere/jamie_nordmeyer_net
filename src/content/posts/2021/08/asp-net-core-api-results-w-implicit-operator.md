@@ -3,7 +3,7 @@ title: "ASP.NET Core API Results w/ Implicit Operator"
 excerpt: "In a project that I’m working on (for the sake of the code samples, this is written using .NET 5 and C# 9), I’m using…"
 date: "2021-08-21T13:35:44"
 author: "Jamie Nordmeyer"
-featuredImage: "/wp-content/uploads/2021/08/20210821_122534.jpg"
+featuredImage: "../../../../assets/images/2021/08/20210821_122534.jpg"
 featuredImageAlt: ""
 wpLink: "/2021/08/21/asp-net-core-api-results-w-implicit-operator/"
 categories:

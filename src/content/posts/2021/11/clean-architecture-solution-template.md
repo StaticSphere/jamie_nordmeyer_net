@@ -3,7 +3,7 @@ title: "Clean Architecture Solution Template"
 excerpt: "UPDATE: This project has now been upgraded to .NET 8. I’ve blogged about it here. I’ve become a huge fan of the Clean Architecture pattern…"
 date: "2021-11-25T14:55:17"
 author: "Jamie Nordmeyer"
-featuredImage: "/wp-content/uploads/2021/11/pexels-dmitry-demidov-3852577.jpg"
+featuredImage: "../../../../assets/images/2021/11/pexels-dmitry-demidov-3852577.jpg"
 featuredImageAlt: ""
 wpLink: "/2021/11/25/clean-architecture-solution-template/"
 categories:

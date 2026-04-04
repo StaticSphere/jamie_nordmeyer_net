@@ -3,7 +3,7 @@ title: ".NET Global CLI’s"
 excerpt: "UPDATE: This project has now been upgraded to .NET 8. I’ve blogged about it here Merry Christmas and Happy Holidays to everyone!!! I know that…"
 date: "2021-12-25T21:24:33"
 author: "Jamie Nordmeyer"
-featuredImage: "/wp-content/uploads/2021/12/console-guid.png"
+featuredImage: "../../../../assets/images/2021/12/console-guid.png"
 featuredImageAlt: ""
 wpLink: "/2021/12/25/net-global-clis/"
 categories:

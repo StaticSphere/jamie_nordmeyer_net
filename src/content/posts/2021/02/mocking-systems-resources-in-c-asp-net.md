@@ -3,7 +3,7 @@ title: "Mocking Systems Resources in C#/ASP.NET"
 excerpt: "Static System Resources When writing unit tests in C#, one question that often comes up is how to mock static resources, and which static resources…"
 date: "2021-02-10T19:29:25"
 author: "Jamie Nordmeyer"
-featuredImage: "/wp-content/uploads/2021/02/clock-scaled.jpg"
+featuredImage: "../../../../assets/images/2021/02/clock-scaled.jpg"
 featuredImageAlt: ""
 wpLink: "/2021/02/10/mocking-systems-resources-in-c-asp-net/"
 categories:

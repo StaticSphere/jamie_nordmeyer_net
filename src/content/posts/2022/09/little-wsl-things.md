@@ -3,7 +3,7 @@ title: "Little WSL Things"
 excerpt: "I just rebuilt my personal laptop and was trying to remember how I’d set up WSL the last time so that I could develop within…"
 date: "2022-09-26T17:23:17"
 author: "Jamie Nordmeyer"
-featuredImage: "/wp-content/uploads/2021/10/pexels-olia-danilevich-4974915.jpg"
+featuredImage: "../../../../assets/images/2021/10/pexels-olia-danilevich-4974915.jpg"
 featuredImageAlt: ""
 wpLink: "/2022/09/26/little-wsl-things/"
 categories:

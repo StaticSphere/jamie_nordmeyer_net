@@ -3,7 +3,7 @@ title: "Unit Testing a Custom Angular Title Strategy"
 excerpt: "I’ve been trying to figure this out for a while but couldn’t find any good resources online on how to unit test a custom Angular…"
 date: "2023-03-05T13:37:34"
 author: "Jamie Nordmeyer"
-featuredImage: "/wp-content/uploads/2023/03/pexels-charlie-solorzano-1762815.jpg"
+featuredImage: "../../../../assets/images/2023/03/pexels-charlie-solorzano-1762815.jpg"
 featuredImageAlt: ""
 wpLink: "/2023/03/05/unit-testing-a-custom-angular-title-strategy/"
 categories:

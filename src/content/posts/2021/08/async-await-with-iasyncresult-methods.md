@@ -3,7 +3,7 @@ title: "Async/Await With IAsyncResult Methods"
 excerpt: "One of the applications that I work with uses PowerShell from with a .NET C# API project. The NuGet package that provides the necessary interfaces…"
 date: "2021-08-27T16:48:00"
 author: "Jamie Nordmeyer"
-featuredImage: "/wp-content/uploads/2021/08/pexels-wendy-van-zyl-1212179.jpg"
+featuredImage: "../../../../assets/images/2021/08/pexels-wendy-van-zyl-1212179.jpg"
 featuredImageAlt: ""
 wpLink: "/2021/08/27/async-await-with-iasyncresult-methods/"
 categories:

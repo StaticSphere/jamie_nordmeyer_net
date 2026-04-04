@@ -16,19 +16,37 @@ This Astro project uses **local Markdown content files** and no longer depends o
   - Categories
   - Tags (tag cloud sizing based on usage count)
 - No comment UI or comment links
-- Local copies of uploaded media under `public/wp-content/uploads/`
+- Local copies of uploaded media under `src/assets/images/`
 
 ## Content locations
 
 - Posts: `src/content/posts/YYYY/MM/*.md` (for example, `src/content/posts/2018/10/intern-talks.md`)
 - Pages: `src/content/pages/*.md`
-- Uploaded media: `public/wp-content/uploads/**`
+- Uploaded media: `src/assets/images/**`
 
 ## Local development
 
 ```sh
 pnpm install
 pnpm dev
+```
+
+## Media migration (imports)
+
+```sh
+pnpm migrate:images
+```
+
+Optional dry-run:
+
+```sh
+pnpm migrate:images -- --dry-run --verbose
+```
+
+Legacy alias (still supported):
+
+```sh
+pnpm migrate:wp-uploads
 ```
 
 ## Build and preview

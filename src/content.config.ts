@@ -6,17 +6,18 @@ const taxonomySchema = z.object({
 });
 
 const posts = defineCollection({
-  schema: z.object({
-    title: z.string(),
-    excerpt: z.string(),
-    date: z.coerce.date(),
-    author: z.string().default("Jamie Nordmeyer"),
-    featuredImage: z.string().nullable().optional(),
-    featuredImageAlt: z.string().optional().default(""),
-    wpLink: z.string(),
-    categories: z.array(taxonomySchema).default([]),
-    tags: z.array(taxonomySchema).default([])
-  })
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      excerpt: z.string(),
+      date: z.coerce.date(),
+      author: z.string().default("Jamie Nordmeyer"),
+      featuredImage: image().nullable().optional(),
+      featuredImageAlt: z.string().optional().default(""),
+      wpLink: z.string(),
+      categories: z.array(taxonomySchema).default([]),
+      tags: z.array(taxonomySchema).default([])
+    })
 });
 
 const pages = defineCollection({
@@ -30,4 +31,3 @@ export const collections = {
   posts,
   pages
 };
-

@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { render } from "astro:content";
 import Layout from "../../../../layouts/Layout.astro";
 import Sidebar from "../../../../components/Sidebar.astro";
@@ -64,7 +65,7 @@ const tagTerms = post.data.tags;
         <div class="surface-card">
           {post.data.featuredImage && (
             <div class="media-frame">
-              <img src={post.data.featuredImage} alt={post.data.featuredImageAlt ?? ""} class="media-fill" />
+              <Image src={post.data.featuredImage} alt={post.data.featuredImageAlt ?? ""} class="media-fill" />
             </div>
           )}
 

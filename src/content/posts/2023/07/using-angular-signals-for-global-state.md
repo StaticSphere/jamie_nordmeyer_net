@@ -3,7 +3,7 @@ title: "Using Angular Signals for Global State"
 excerpt: "With the release of Angular 16 we got access to the new Signals API, along with a host of other features. They are currently in…"
 date: "2023-07-29T14:13:05"
 author: "Jamie Nordmeyer"
-featuredImage: "/wp-content/uploads/2023/07/pexels-karol-d-787667.jpg"
+featuredImage: "../../../../assets/images/2023/07/pexels-karol-d-787667.jpg"
 featuredImageAlt: ""
 wpLink: "/2023/07/29/using-angular-signals-for-global-state/"
 categories:

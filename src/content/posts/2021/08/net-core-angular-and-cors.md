@@ -3,7 +3,7 @@ title: ".NET Core/Angular and CORS"
 excerpt: "One of the toughest subjects for me to tackle as a professional web developer has been CORS. If you type in “I hate CORS” into…"
 date: "2021-08-11T18:01:51"
 author: "Jamie Nordmeyer"
-featuredImage: "/wp-content/uploads/2021/08/pexels-pixabay-60504-scaled.jpg"
+featuredImage: "../../../../assets/images/2021/08/pexels-pixabay-60504-scaled.jpg"
 featuredImageAlt: ""
 wpLink: "/2021/08/11/net-core-angular-and-cors/"
 categories:

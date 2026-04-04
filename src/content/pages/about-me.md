@@ -5,7 +5,7 @@ wpLink: "/about-me/"
 
 <a rel="me" href="https://twit.social/@nordyj" style="display:none">Mastodon</a>
 
-![](/wp-content/uploads/2018/09/avatar-1.jpg)
+![](../../assets/images/2018/09/avatar-1.jpg)
 
 Welcome!  My name is Jamie Nordmeyer.  I’m a Software Engineer and Architect living and working in the Portland, OR Metro area. I was born in Redding, CA, but have live in the Pacific Northwest for most of my life, and absolutely love it here!  I’m one of those bizarre types that, while I enjoy the summer, definitely prefer the Fall weather when the rain returns, and it’s cool outside. The term for someone like me is a Pluviophile, and I’m happy to own it.
 
@@ -19,4 +19,4 @@ So that’s me!  Don’t hesitate to reach out if you have any questions or comm
 
 ## Certifications
 
-[![](/wp-content/uploads/2022/09/aws-certified-solutions-architect-associate-2.png)](https://www.credly.com/badges/c9f42eee-8d2e-49b7-8373-dfc1053e6aea/linked\_in\_profile)
+[![](../../assets/images/2022/09/aws-certified-solutions-architect-associate-2.png)](https://www.credly.com/badges/c9f42eee-8d2e-49b7-8373-dfc1053e6aea/linked\_in\_profile)

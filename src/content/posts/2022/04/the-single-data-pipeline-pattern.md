@@ -3,7 +3,7 @@ title: "The Single Data Pipeline Pattern"
 excerpt: "In a previous post, I talked about the Clean Architecture Pattern, and I presented a .NET 6 solution template that can be used to bootstrap…"
 date: "2022-04-24T14:18:15"
 author: "Jamie Nordmeyer"
-featuredImage: "/wp-content/uploads/2022/04/pexels-panumas-nikhomkhai-1148820.jpg"
+featuredImage: "../../../../assets/images/2022/04/pexels-panumas-nikhomkhai-1148820.jpg"
 featuredImageAlt: ""
 wpLink: "/2022/04/24/the-single-data-pipeline-pattern/"
 categories:

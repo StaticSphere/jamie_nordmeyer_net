@@ -3,7 +3,7 @@ title: "Open Source Project Updates"
 excerpt: "I’ve updated two of my open-source projects for those who might care, moving them both up to .NET 8. The first is the dotnet GUID…"
 date: "2024-03-03T15:06:11"
 author: "Jamie Nordmeyer"
-featuredImage: "/wp-content/uploads/2021/12/console-guid.png"
+featuredImage: "../../../../assets/images/2021/12/console-guid.png"
 featuredImageAlt: ""
 wpLink: "/2024/03/03/open-source-project-updates/"
 categories:

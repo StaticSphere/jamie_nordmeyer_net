@@ -3,7 +3,7 @@ title: "Caching Angular Resolver State"
 excerpt: "There are certain types of data that we will pull into our applications that do not change, or that change very, very slowly. In these…"
 date: "2021-11-16T20:57:30"
 author: "Jamie Nordmeyer"
-featuredImage: "/wp-content/uploads/2021/11/pexels-breakingpic-3237.jpg"
+featuredImage: "../../../../assets/images/2021/11/pexels-breakingpic-3237.jpg"
 featuredImageAlt: ""
 wpLink: "/2021/11/16/caching-angular-resolver-state/"
 categories:

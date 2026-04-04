@@ -16,7 +16,7 @@ tags:
     slug: "c"
 ---
 
-![](/wp-content/uploads/2019/06/what.png)
+![](../../../../assets/images/2019/06/what.png)
 
 Many libraries that deal with pathing (taking path “fragments” and appending them together to form a larger path) do not care whether you add trailing separator characters or not. If you supply them, they let the fragment be. If not, then the fragment separator is automatically added. For instance, both Node’s *path* library, as well as.NET’s System.IO.Path methods, allow you to provide file path fragments, and if there are missing path separators between, they will be added automatically.
 

@@ -3,7 +3,7 @@ title: "When VSCode/OmniSharp Stop Working"
 excerpt: "I’ve run into issues a couple of times now when working in Visual Studio Code where OmniSharp seems to lose itself. Intellisense isn’t working, nor…"
 date: "2021-10-14T17:06:36"
 author: "Jamie Nordmeyer"
-featuredImage: "/wp-content/uploads/2021/10/pexels-olia-danilevich-4974915.jpg"
+featuredImage: "../../../../assets/images/2021/10/pexels-olia-danilevich-4974915.jpg"
 featuredImageAlt: ""
 wpLink: "/2021/10/14/when-vscode-omnisharp-stop-working/"
 categories:
@@ -28,7 +28,7 @@ The second issue was more frustrating to figure out, and when I did, I had a *fo
 
 In the bottom left-ish of VSCode you’ll see a flame button (this represents OmniSharps status), and just to the right of that is a label that shows the root project OR solution that OmniSharp is currently paying attention to.
 
-!\[](/wp-content/uploads/2021/10/image-1.png)
+!\[](../../../../assets/images/2021/10/image-1.png)
 
 I’d accidentally set this to one of my projects under the solution, rather than on the solution file itself. When that happened, only that project was working with OmniSharp. Once I reset it back to the solution file, BOOM, everything began working correctly again.
 

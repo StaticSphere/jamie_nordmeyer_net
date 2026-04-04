@@ -3,7 +3,7 @@ title: "Wait, .NET is HOW old?!?"
 excerpt: "Wow, the time has really flown by, hasn’t it?!? Today marks the 20th anniversary of .NET! Released on February 13th, 2002, .NET has been through…"
 date: "2022-02-13T07:32:12"
 author: "Jamie Nordmeyer"
-featuredImage: "/wp-content/uploads/2022/02/pexels-ylanite-koppens-796606.jpg"
+featuredImage: "../../../../assets/images/2022/02/pexels-ylanite-koppens-796606.jpg"
 featuredImageAlt: ""
 wpLink: "/2022/02/13/wait-net-is-how-old/"
 categories:

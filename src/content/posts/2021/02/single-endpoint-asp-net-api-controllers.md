@@ -3,7 +3,7 @@ title: "Single Endpoint ASP.NET API Controllers"
 excerpt: "Traditional ASP.NET API Controllers When working with ASP.NET API’s, it’s common practice to have a controller class defined that represents the set of endpoints for…"
 date: "2021-02-13T22:13:13"
 author: "Jamie Nordmeyer"
-featuredImage: "/wp-content/uploads/2021/02/controller-scaled.jpg"
+featuredImage: "../../../../assets/images/2021/02/controller-scaled.jpg"
 featuredImageAlt: ""
 wpLink: "/2021/02/13/single-endpoint-asp-net-api-controllers/"
 categories:

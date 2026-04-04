@@ -3,7 +3,7 @@ title: "Running a Design Jam/Geek Out Meeting"
 excerpt: "One of my favorite things to do at work with my fellow engineers is to “geek out”. Whether it’s exploring new technologies, helping, or getting…"
 date: "2021-09-25T14:22:59"
 author: "Jamie Nordmeyer"
-featuredImage: "/wp-content/uploads/2021/09/pexels-helena-lopes-933964.jpg"
+featuredImage: "../../../../assets/images/2021/09/pexels-helena-lopes-933964.jpg"
 featuredImageAlt: ""
 wpLink: "/2021/09/25/running-a-design-jam-geek-out-meeting/"
 categories:

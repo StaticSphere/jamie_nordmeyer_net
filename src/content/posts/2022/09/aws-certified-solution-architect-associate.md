@@ -3,7 +3,7 @@ title: "AWS Certified Solution Architect – Associate"
 excerpt: "Woot! This last Wednesday, September 14th, 2022, I finally picked up the first of two AWS certifications that I plan on getting, which is the…"
 date: "2022-09-16T17:19:06"
 author: "Jamie Nordmeyer"
-featuredImage: "/wp-content/uploads/2022/09/BlogBanner.png"
+featuredImage: "../../../../assets/images/2022/09/BlogBanner.png"
 featuredImageAlt: ""
 wpLink: "/2022/09/16/aws-certified-solution-architect-associate/"
 categories:
