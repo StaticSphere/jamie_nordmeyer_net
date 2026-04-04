@@ -20,34 +20,33 @@ const getTagSize = (count: number) => {
 };
 ---
 
-<aside class="sidebar sidebar-primary" id="sidebar-primary" role="complementary">
-  <h2 class="screen-reader-text">Sidebar</h2>
+<aside id="sidebar-primary" role="complementary" class="mt-12 md:flex-1">
+  <h2 class="sr-only">Sidebar</h2>
 
-  <section class="widget widget_recent_entries">
-    <h3 class="widget-title">Recent Posts</h3>
-    <ul>
+  <section class="surface-card surface-body mb-3 md:pt-7.5">
+    <h3 class="mb-6 text-base leading-normal font-bold">Recent Posts</h3>
+    <ul class="m-0 list-disc pl-5 text-nav">
       {recentPosts.map((post) => (
-        <li><a href={getPostUrl(post)}>{post.data.title}</a></li>
+        <li class="mb-1.5 last:mb-0"><a class="transition-colors hover:underline" href={getPostUrl(post)}>{post.data.title}</a></li>
       ))}
     </ul>
   </section>
 
-  <section class="widget widget_categories">
-    <h3 class="widget-title">Categories</h3>
-    <ul>
+  <section class="surface-card surface-body mb-3 md:pt-7.5">
+    <h3 class="mb-6 text-base leading-normal font-bold">Categories</h3>
+    <ul class="m-0 list-disc pl-5 text-nav">
       {categories.map((category) => (
-        <li><a href={getCategoryUrl(category.slug)}>{category.name}</a></li>
+        <li class="mb-1.5 last:mb-0"><a class="transition-colors hover:underline" href={getCategoryUrl(category.slug)}>{category.name}</a></li>
       ))}
     </ul>
   </section>
 
-  <section class="widget widget_tag_cloud">
-    <h3 class="widget-title">Tags</h3>
-    <div class="tagcloud">
+  <section class="surface-card surface-body md:pt-7.5">
+    <h3 class="mb-6 text-base leading-normal font-bold">Tags</h3>
+    <div class="flex flex-wrap gap-x-2 gap-y-1 text-sm leading-snug">
       {tags.map((tag) => (
-        <a href={getTagUrl(tag.slug)} style={`font-size: ${getTagSize(tag.count)};`}>{tag.name}</a>
+        <a class="inline-block transition-colors hover:underline" href={getTagUrl(tag.slug)} style={`font-size: ${getTagSize(tag.count)};`}>{tag.name}</a>
       ))}
     </div>
   </section>
 </aside>
-

@@ -35,30 +35,29 @@ for (const page of visiblePages) {
 }
 ---
 
-<nav class="navigation pagination" aria-label="Posts">
-  <h2 class="screen-reader-text">Posts navigation</h2>
-  <div class="nav-links">
+<nav aria-label="Posts" class="mb-6 bg-white px-content-x py-6 text-center shadow-card sm:relative">
+  <h2 class="sr-only">Posts navigation</h2>
+  <div class="flex flex-wrap items-center justify-center gap-y-3">
     {currentPage > 1 && (
-      <a class="prev page-numbers" href={getPageHref(currentPage - 1)}>
+      <a class="mr-3 text-center font-bold transition-colors hover:text-site-muted sm:absolute sm:left-content-x" href={getPageHref(currentPage - 1)}>
         Previous
       </a>
     )}
 
     {pagesWithGaps.map((entry) =>
       entry === "dots" ? (
-        <span class="page-numbers dots">&hellip;</span>
+        <span class="mx-3 inline-block">&hellip;</span>
       ) : entry === currentPage ? (
-        <span aria-current="page" class="page-numbers current">{entry}</span>
+        <span aria-current="page" class="mx-3 inline-block bg-site-bg px-2 py-0.5">{entry}</span>
       ) : (
-        <a class="page-numbers" href={getPageHref(entry)}>{entry}</a>
+        <a class="mx-3 inline-block transition-colors hover:text-site-muted" href={getPageHref(entry)}>{entry}</a>
       )
     )}
 
     {currentPage < totalPages && (
-      <a class="next page-numbers" href={getPageHref(currentPage + 1)}>
+      <a class="ml-3 text-center font-bold transition-colors hover:text-site-muted sm:absolute sm:right-content-x" href={getPageHref(currentPage + 1)}>
         Next
       </a>
     )}
   </div>
 </nav>
-

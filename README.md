@@ -5,6 +5,9 @@ This Astro project uses **local Markdown content files** and no longer depends o
 ## What is implemented
 
 - Layout and styling inspired by the WordPress Period theme used on the live site
+- Tailwind CSS v4 for utility-first styling across layouts, pages, and components
+- Shared Tailwind theme tokens and reusable component classes for consistent spacing/colors/typography
+- Font Awesome icons loaded from a local npm package (no external icon CDN dependency)
 - Home page with post listing, featured images, and 10-post pagination
 - Local content collections for posts and pages
 - WordPress-style public URLs for posts, categories, tags, pages, and homepage pagination
@@ -46,3 +49,4 @@ pnpm preview
 - `src/components/Pagination.astro` - homepage pagination UI
 - `src/pages/[year]/[month]/[day]/[slug].astro` - WordPress-style post routes
 - `src/pages/[slug].astro` - top-level page routes like `about-me`
+- `src/styles/global.css` - Tailwind entrypoint, theme tokens, and shared content helpers

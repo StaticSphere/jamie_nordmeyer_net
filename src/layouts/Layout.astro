@@ -1,4 +1,6 @@
 ---
+import "../styles/global.css";
+
 type Props = {
   pageTitle?: string;
   pageDescription?: string;
@@ -21,104 +23,142 @@ const {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
     <title>{pageTitle}</title>
   </head>
-  <body id="period" class="home blog">
-    <a class="skip-content" href="#primary-container">Press "Enter" to skip to content</a>
-    <div id="overflow-container" class="overflow-container">
-      <header class="site-header" id="site-header" role="banner">
-        <div class="max-width">
-          <div id="title-container" class="title-container">
-            <div id="site-title" class="site-title"><a href="/">JamieNordmeyer.net</a></div>
-            <p class="tagline">The various ramblings of a Portland code monkey</p>
+  <body class="min-h-screen bg-site-bg font-sans text-site-text antialiased">
+    <a
+      class="fixed left-1/2 -top-10 z-50 -translate-x-1/2 bg-site-darker px-3 py-2 text-sm text-white transition-all focus:top-2"
+      href="#primary-container"
+    >
+      Press "Enter" to skip to content
+    </a>
+
+    <div class="relative min-h-screen overflow-x-hidden">
+      <header id="site-header" role="banner" class="bg-site-dark px-page-x pb-20 pt-9 text-center text-white md:text-left">
+        <div class="mx-auto max-w-325">
+          <div id="title-container" class="mb-6 md:float-left md:relative md:z-10 md:mb-9">
+            <div id="site-title" class="heading-site">
+              <a class="text-white transition-colors hover:text-site-light" href="/">JamieNordmeyer.net</a>
+            </div>
+            <p class="text-meta m-0 text-site-light md:ml-1.5 md:inline-block">
+              The various ramblings of a Portland code monkey
+            </p>
           </div>
 
-          <button id="toggle-navigation" class="toggle-navigation" name="toggle-navigation" aria-expanded="false">
-            <span class="screen-reader-text">open menu</span>
-            <svg width="36" height="23" viewBox="0 0 36 23" aria-hidden="true" focusable="false">
+          <button
+            id="toggle-navigation"
+            class="my-6 text-white transition-colors hover:text-site-light md:hidden"
+            name="toggle-navigation"
+            aria-expanded="false"
+          >
+            <span class="sr-only">open menu</span>
+            <svg width="36" height="23" viewBox="0 0 36 23" aria-hidden="true" focusable="false" class="fill-current">
               <rect x="0" y="20" width="36" height="3"></rect>
               <rect x="0" y="10" width="36" height="3"></rect>
               <rect x="0" y="0" width="36" height="3"></rect>
             </svg>
           </button>
 
-          <div id="menu-primary-container" class="menu-primary-container">
-            <div class="icon-container">
-              <ul class="social-media-icons">
+          <div id="menu-primary-container" class="hidden clear-both md:block">
+            <div class="mb-6 md:float-right md:mb-0">
+              <ul class="mb-6 flex list-none items-center justify-center gap-5 p-0 md:mb-0 md:inline-flex">
                 <li>
-                  <a class="twitter" target="_blank" rel="noreferrer" href="https://twitter.com/NordyJ" aria-label="Twitter">
-                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                  <a class="text-white transition-colors hover:text-site-light" target="_blank" rel="noreferrer" href="https://twitter.com/NordyJ" aria-label="Twitter">
+                    <i class="fab fa-twitter text-base" aria-hidden="true"></i>
                   </a>
                 </li>
                 <li>
-                  <a class="linkedin" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/nordyj/" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                  <a class="text-white transition-colors hover:text-site-light" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/nordyj/" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin text-base" aria-hidden="true"></i>
                   </a>
                 </li>
                 <li>
-                  <a class="github" target="_blank" rel="noreferrer" href="https://github.com/StaticSphere" aria-label="GitHub">
-                    <i class="fab fa-github" aria-hidden="true"></i>
+                  <a class="text-white transition-colors hover:text-site-light" target="_blank" rel="noreferrer" href="https://github.com/StaticSphere" aria-label="GitHub">
+                    <i class="fab fa-github text-base" aria-hidden="true"></i>
                   </a>
                 </li>
                 <li>
-                  <a class="medium" target="_blank" rel="noreferrer" href="https://medium.com/@jamienordmeyer" aria-label="Medium">
-                    <i class="fab fa-medium" aria-hidden="true"></i>
+                  <a class="text-white transition-colors hover:text-site-light" target="_blank" rel="noreferrer" href="https://medium.com/@jamienordmeyer" aria-label="Medium">
+                    <i class="fab fa-medium text-base" aria-hidden="true"></i>
                   </a>
                 </li>
                 <li>
-                  <a class="meetup" target="_blank" rel="noreferrer" href="https://www.meetup.com/members/153519952/" aria-label="Meetup">
-                    <i class="fab fa-meetup" aria-hidden="true"></i>
+                  <a class="text-white transition-colors hover:text-site-light" target="_blank" rel="noreferrer" href="https://www.meetup.com/members/153519952/" aria-label="Meetup">
+                    <i class="fab fa-meetup text-base" aria-hidden="true"></i>
                   </a>
                 </li>
                 <li>
                   <a
-                    class="stack-overflow"
+                    class="text-white transition-colors hover:text-site-light"
                     target="_blank"
                     rel="noreferrer"
                     href="https://stackoverflow.com/users/339900/jamie-nordmeyer"
                     aria-label="Stack Overflow"
                   >
-                    <i class="fab fa-stack-overflow" aria-hidden="true"></i>
+                    <i class="fab fa-stack-overflow text-base" aria-hidden="true"></i>
                   </a>
                 </li>
               </ul>
 
-              <div class="search-form-container">
-                <button id="search-icon" class="search-icon" type="button" aria-expanded="false">
+              <div class="relative inline-block md:ml-2 md:align-middle">
+                <button
+                  id="search-icon"
+                  class="text-white transition-colors hover:text-site-light"
+                  type="button"
+                  aria-expanded="false"
+                >
                   <i class="fas fa-search" aria-hidden="true"></i>
-                  <span class="screen-reader-text">Search</span>
+                  <span class="sr-only">Search</span>
                 </button>
-                <form role="search" method="get" class="search-form" action="/">
-                  <label class="screen-reader-text" for="site-search">Search</label>
-                  <input id="site-search" type="search" class="search-field" placeholder="Search..." name="s" />
+                <form
+                  id="search-form"
+                  role="search"
+                  method="get"
+                  action="/"
+                  class="mt-2 hidden w-full bg-white p-2 shadow-card md:absolute md:right-0 md:top-6.5 md:mt-0 md:w-60"
+                >
+                  <label class="sr-only" for="site-search">Search</label>
+                  <input
+                    id="site-search"
+                    type="search"
+                    class="w-full border border-site-light px-2 py-2 text-xs text-site-text"
+                    placeholder="Search..."
+                    name="s"
+                  />
                 </form>
               </div>
             </div>
 
-            <nav id="menu-primary" class="menu-container menu-primary" role="navigation" aria-label="Primary Navigation">
-              <ul>
-                <li><a href="/about-me/">About Me</a></li>
+            <nav
+              id="menu-primary"
+              role="navigation"
+              aria-label="Primary Navigation"
+              class="my-6 text-nav md:mt-6"
+            >
+              <ul class="m-0 list-none p-0">
+                <li class="mb-1.5 md:mr-2 md:mb-0 md:inline-block">
+                  <a
+                    class="inline-block px-2 pb-0.5 text-white transition-colors hover:bg-white hover:text-site-text"
+                    href="/about-me/"
+                  >
+                    About Me
+                  </a>
+                </li>
               </ul>
             </nav>
           </div>
         </div>
       </header>
 
-      <div id="primary-container" class="primary-container">
+      <div id="primary-container" class="layout-primary px-page-x">
         <slot />
       </div>
 
-      <footer id="site-footer" class="site-footer" role="contentinfo">
-        <div class="max-width"></div>
-        <div class="design-credit">
+      <footer id="site-footer" role="contentinfo" class="footer-wrap clear-both bg-site-dark text-center text-site-light">
+        <div class="mx-auto max-w-325"></div>
+        <div class="footer-credit bg-site-darker px-page-x py-2.25 text-xs leading-normal">
           <span>
-            <a href="https://www.competethemes.com/period/" rel="nofollow">Period WordPress Theme</a>
+            <a class="text-white transition-colors hover:text-site-light" href="https://www.competethemes.com/period/" rel="nofollow">Period WordPress Theme</a>
             inspiration adapted for Astro.
           </span>
         </div>
@@ -129,683 +169,22 @@ const {
       const toggleButton = document.getElementById("toggle-navigation");
       const menuContainer = document.getElementById("menu-primary-container");
       const searchButton = document.getElementById("search-icon");
-      const searchForm = document.querySelector(".search-form-container");
+      const searchForm = document.getElementById("search-form");
 
       if (toggleButton && menuContainer) {
         toggleButton.addEventListener("click", () => {
-          const isOpen = menuContainer.classList.toggle("open");
-          toggleButton.setAttribute("aria-expanded", String(isOpen));
+          const isHidden = menuContainer.classList.toggle("hidden");
+          toggleButton.setAttribute("aria-expanded", String(!isHidden));
         });
       }
 
       if (searchButton && searchForm) {
         searchButton.addEventListener("click", () => {
-          const isOpen = searchForm.classList.toggle("open");
-          searchButton.setAttribute("aria-expanded", String(isOpen));
+          const isHidden = searchForm.classList.toggle("hidden");
+          searchButton.setAttribute("aria-expanded", String(!isHidden));
         });
       }
     </script>
   </body>
 </html>
 
-<style is:global>
-  *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
-  }
-
-  body {
-    height: 100%;
-    font-size: 100%;
-    font-weight: 300;
-    margin: 0;
-    padding: 0;
-    font-family: "Roboto", "Open Sans", sans-serif;
-    line-height: 1.5;
-    background: #ededed;
-    color: #333333;
-    -webkit-font-smoothing: subpixel-antialiased;
-    word-wrap: break-word;
-  }
-
-  p {
-    margin: 1.5em 0;
-  }
-
-  a {
-    color: #333333;
-    text-decoration: none;
-    transition: 0.1s ease-in-out;
-  }
-
-  a:link,
-  a:visited {
-    color: #333333;
-  }
-
-  a:hover,
-  a:active,
-  a:focus {
-    color: #757575;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Roboto", "Open Sans", sans-serif;
-    margin: 0;
-    padding: 0;
-    font-weight: 700;
-  }
-
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: 1em;
-    line-height: 1.5;
-  }
-
-  ul,
-  ol {
-    font-size: 1em;
-    padding: 0;
-    margin: 1.5em;
-  }
-
-  .screen-reader-text {
-    border: 0;
-    clip: rect(1px, 1px, 1px, 1px);
-    height: 1px;
-    overflow: hidden;
-    position: absolute !important;
-    width: 1px;
-  }
-
-  .skip-content {
-    left: 50%;
-    position: absolute;
-    transform: translateX(-50%);
-    top: -40px;
-    z-index: 99;
-    background: #242424;
-    color: #ffffff;
-    padding: 8px 12px;
-  }
-
-  .skip-content:focus {
-    top: 10px;
-    color: #ffffff;
-  }
-
-  .overflow-container {
-    position: relative;
-    overflow: hidden;
-    min-height: 100%;
-  }
-
-  .max-width {
-    max-width: 1300px;
-    margin: 0 auto;
-  }
-
-  .site-header {
-    background: #333333;
-    color: #ffffff;
-    text-align: center;
-    padding: 36px 5.5556% 5.25em;
-  }
-
-  #title-container {
-    margin-bottom: 1.5em;
-  }
-
-  .site-header:after,
-  .primary-container:after,
-  .loop-container:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0;
-  }
-
-  .site-title {
-    font-size: 1.3125em;
-    line-height: 1.333;
-    font-weight: 700;
-  }
-
-  .post-title,
-  h1 {
-    font-size: 1.125em;
-    line-height: 1.333;
-  }
-
-  .tagline,
-  .menu-primary a,
-  .social-media-icons a,
-  .widget > *,
-  .sidebar-primary .widget > *,
-  .more-link {
-    font-size: 0.875em;
-    line-height: 1.715;
-  }
-
-  .post-byline,
-  .design-credit span,
-  input[type="search"] {
-    font-size: 0.75em;
-    line-height: 1.5;
-  }
-
-  .site-title a,
-  .site-title a:link,
-  .site-title a:visited,
-  .site-footer a,
-  .site-footer a:link,
-  .site-footer a:visited,
-  .menu-primary a,
-  .menu-primary a:link,
-  .menu-primary a:visited,
-  .social-media-icons a,
-  .social-media-icons a:link,
-  .social-media-icons a:visited {
-    color: #ffffff;
-  }
-
-  .site-title a:hover,
-  .site-footer a:hover,
-  .menu-primary a:hover,
-  .social-media-icons a:hover,
-  .menu-primary a:focus,
-  .social-media-icons a:focus {
-    color: #d4d4d4;
-  }
-
-  .tagline {
-    color: #d4d4d4;
-    margin: 0;
-  }
-
-  .toggle-navigation {
-    font-size: 1em;
-    background: transparent;
-    padding: 0;
-    border: none;
-    margin: 1.5em 0 1.875em;
-    color: #ffffff;
-  }
-
-  .toggle-navigation svg {
-    fill: #ffffff;
-  }
-
-  .toggle-navigation:hover {
-    cursor: pointer;
-  }
-
-  .menu-primary-container {
-    position: relative;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-  }
-
-  .menu-primary-container.open {
-    max-height: 520px;
-  }
-
-  .menu-primary {
-    color: #ffffff;
-    margin: 1.5em 0 2.25em;
-  }
-
-  .menu-primary ul {
-    margin: 0;
-    list-style: none;
-  }
-
-  .menu-primary li {
-    margin-bottom: 6px;
-  }
-
-  .menu-primary li:last-child {
-    margin-bottom: 0;
-  }
-
-  .menu-primary a {
-    display: inline-block;
-    vertical-align: middle;
-    padding: 0 8px 2px;
-    transition: all 0.2s;
-  }
-
-  .menu-primary a:hover,
-  .menu-primary a:active,
-  .menu-primary a:focus {
-    background: #ffffff;
-    color: #333333;
-  }
-
-  .icon-container {
-    margin-bottom: 1.5em;
-  }
-
-  .social-media-icons {
-    list-style: none;
-    margin: 0 0 1.5em;
-  }
-
-  .social-media-icons li {
-    display: inline-block;
-    margin-right: 20px;
-  }
-
-  .social-media-icons li:last-child {
-    margin-right: 0;
-  }
-
-  .social-media-icons a {
-    display: inline-block;
-    line-height: 0;
-  }
-
-  .social-media-icons i {
-    font-size: 16px;
-  }
-
-  .search-form-container {
-    display: inline-block;
-  }
-
-  .search-form-container button {
-    font-size: 1em;
-    background: transparent;
-    border: none;
-    color: #ffffff;
-    padding: 0;
-  }
-
-  .search-form-container button:hover {
-    cursor: pointer;
-  }
-
-  .search-form-container form {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-in-out;
-  }
-
-  .search-form-container.open form {
-    max-height: 60px;
-  }
-
-  .search-field {
-    width: 100%;
-    border: 1px solid #d4d4d4;
-    padding: 0.6em;
-    margin-top: 0.5em;
-    border-radius: 0;
-  }
-
-  .primary-container {
-    padding: 0 5.5556%;
-    margin-top: -5.25em;
-    min-height: calc(100vh - 291px);
-  }
-
-  .main {
-    margin: 0 auto;
-  }
-
-  .entry {
-    position: relative;
-    margin-bottom: 1.5em;
-  }
-
-  .entry > article {
-    background: #ffffff;
-    box-shadow: 0 0 2px 0 rgba(58, 58, 58, 0.2);
-  }
-
-  .post-container {
-    padding: 1.5em 4.6875375%;
-    margin-bottom: 0.75em;
-  }
-
-  .post-header {
-    margin: 0 0 1.5em;
-  }
-
-  .post-byline a {
-    font-weight: 700;
-    text-decoration: underline;
-  }
-
-  .featured-image {
-    position: relative;
-    height: 0;
-    padding-bottom: 50%;
-    overflow: hidden;
-  }
-
-  .featured-image > a,
-  .featured-image > img,
-  .featured-image > a > img {
-    position: absolute;
-    inset: 0;
-  }
-
-  .featured-image > a {
-    font-size: 0;
-  }
-
-  .featured-image > a > img,
-  .featured-image > img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-
-  .post-content a {
-    text-decoration: underline;
-    font-weight: 700;
-  }
-
-  .post-content a:hover,
-  .post-content a:active,
-  .post-content a:focus {
-    text-decoration: none;
-  }
-
-  .post-content img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .post-content figure,
-  .post-content .wp-block-image {
-    margin: 0 0 1.5em;
-  }
-
-  .post-content .alignleft {
-    float: left;
-    margin: 0 1.5em 1em 0;
-  }
-
-  .post-content .alignright {
-    float: right;
-    margin: 0 0 1em 1.5em;
-  }
-
-  .post-content .aligncenter {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .more-link-wrapper {
-    display: inline-block;
-  }
-
-  .more-link {
-    display: inline-block;
-    border: solid 1px #333333;
-    padding: 6px 12px;
-    margin-right: 12px;
-    transition: all 0.2s;
-  }
-
-  .more-link:hover,
-  .more-link:active,
-  .more-link:focus {
-    color: #ffffff;
-    background: #333333;
-  }
-
-  .pagination {
-    text-align: center;
-    margin-bottom: 1.5em;
-    background: #ffffff;
-    box-shadow: 0 0 2px 0 rgba(58, 58, 58, 0.2);
-    padding: 1.5em 4.6875375%;
-  }
-
-  .pagination .prev,
-  .pagination .next {
-    font-weight: 700;
-  }
-
-  .pagination .prev {
-    float: left;
-    margin-left: 0;
-  }
-
-  .pagination .next {
-    float: right;
-    margin-right: 0;
-  }
-
-  .pagination a,
-  .pagination span {
-    margin: 0 0.75em;
-    display: inline-block;
-  }
-
-  .pagination .current {
-    padding: 2px 8px;
-    background: #ededed;
-  }
-
-  .archive-header {
-    margin-bottom: 0.75em;
-    color: #ffffff;
-  }
-
-  .archive-header h1 {
-    display: inline-block;
-    font-weight: 300;
-    background: #242424;
-    padding: 6px 14px;
-  }
-
-  .post-categories,
-  .post-tags {
-    margin-bottom: 1em;
-  }
-
-  .post-categories a,
-  .post-tags a {
-    font-weight: 700;
-  }
-
-  .sidebar-primary .widget {
-    margin-bottom: 0.75em;
-    background: #ffffff;
-    box-shadow: 0 0 2px 0 rgba(58, 58, 58, 0.2);
-    padding: 1.5em 4.6875375%;
-  }
-
-  .sidebar-primary .widget:last-child {
-    margin-bottom: 0;
-  }
-
-  .widget-title {
-    font-size: 1em;
-    line-height: 1.5;
-    margin-bottom: 1.5em;
-  }
-
-  .widget ul {
-    margin: 0;
-    padding-left: 1.2rem;
-  }
-
-  .widget li {
-    margin-bottom: 0.35em;
-  }
-
-  .widget a:hover,
-  .widget a:active,
-  .widget a:focus {
-    text-decoration: underline;
-  }
-
-  .tagcloud a {
-    margin-right: 0.55em;
-    display: inline-block;
-    line-height: 1.4;
-    margin-bottom: 0.35em;
-  }
-
-  .site-footer {
-    text-align: center;
-    background: #333333;
-    margin-top: 3.75em;
-    color: #d4d4d4;
-    clear: both;
-  }
-
-  .design-credit {
-    background: #242424;
-    padding: 9px 5.5556%;
-    margin-top: 1.875em;
-  }
-
-  @media all and (min-width: 37.5em) {
-    h1 {
-      font-size: 1.3125em;
-      line-height: 1.333;
-    }
-
-    h2 {
-      font-size: 1.125em;
-      line-height: 1.333;
-    }
-
-    .pagination {
-      position: relative;
-    }
-  }
-
-  @media all and (min-width: 56.25em) {
-    .site-header {
-      text-align: left;
-    }
-
-    .title-container {
-      position: relative;
-      z-index: 9;
-      margin-bottom: 2.25em;
-      float: left;
-    }
-
-    .site-title,
-    .tagline {
-      display: inline-block;
-    }
-
-    .tagline {
-      margin-left: 6px;
-    }
-
-    .toggle-navigation {
-      display: none;
-    }
-
-    .menu-primary-container {
-      max-height: none;
-      overflow: visible;
-      clear: both;
-    }
-
-    .icon-container {
-      float: right;
-      margin-bottom: 0;
-    }
-
-    .social-media-icons {
-      display: inline-block;
-      margin: 0;
-    }
-
-    .search-form-container {
-      margin-left: 8px;
-      vertical-align: middle;
-    }
-
-    .search-form-container form {
-      position: absolute;
-      right: 0;
-      top: 26px;
-      width: 240px;
-      background: #ffffff;
-      box-shadow: 0 0 2px 0 rgba(58, 58, 58, 0.2);
-      padding: 8px;
-      max-height: 0;
-    }
-
-    .search-form-container.open form {
-      max-height: 70px;
-    }
-
-    .menu-primary {
-      margin: 1.5em 0 0;
-    }
-
-    .menu-primary li {
-      display: inline-block;
-      margin-right: 8px;
-      margin-bottom: 0;
-    }
-
-    .main {
-      width: 62.5005%;
-      float: left;
-      margin-right: 3.125025%;
-    }
-
-    .sidebar-primary {
-      width: 34.375275%;
-      float: left;
-      margin-top: 3em;
-    }
-
-    .sidebar-primary .widget {
-      padding-top: 1.875em;
-    }
-  }
-
-  @media all and (max-width: 37.49em) {
-    .post-content .alignleft,
-    .post-content .alignright {
-      float: none;
-      margin: 0 auto 1.5em;
-      display: block;
-    }
-  }
-
-  @media all and (min-width: 68.75em) {
-    h1 {
-      font-size: 1.75em;
-      line-height: 1.357;
-    }
-
-    h2 {
-      font-size: 1.3125em;
-      line-height: 1.333;
-    }
-
-    h3 {
-      font-size: 1.125em;
-      line-height: 1.333;
-    }
-  }
-</style>

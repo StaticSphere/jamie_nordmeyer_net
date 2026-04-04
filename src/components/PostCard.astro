@@ -16,31 +16,42 @@ const publishedDate = post.data.date.toLocaleDateString("en-US", {
 const postUrl = getPostUrl(post);
 ---
 
-<div class="entry">
-  <article>
+<div class="relative mb-6">
+  <article class="surface-card">
     {post.data.featuredImage && (
-      <div class="featured-image">
-        <a href={postUrl} aria-label={post.data.title}>
-          <img src={post.data.featuredImage} alt={post.data.featuredImageAlt ?? ""} loading="lazy" />
+      <div class="media-frame">
+        <a href={postUrl} aria-label={post.data.title} class="absolute inset-0 block">
+          <img
+            src={post.data.featuredImage}
+            alt={post.data.featuredImageAlt ?? ""}
+            loading="lazy"
+            class="media-fill"
+          />
         </a>
       </div>
     )}
 
-    <div class="post-container">
-      <header class="post-header">
-        <h2 class="post-title"><a href={postUrl}>{post.data.title}</a></h2>
-        <div class="post-byline">Published {publishedDate} by {post.data.author}</div>
+    <div class="surface-body mb-3">
+      <header class="mb-6">
+        <h2 class="heading-page">
+          <a class="transition-colors hover:text-site-muted" href={postUrl}>{post.data.title}</a>
+        </h2>
+        <div class="text-xs leading-normal">Published {publishedDate} by {post.data.author}</div>
       </header>
 
       {showExcerpt ? (
-        <div class="post-content">
-          <p>{post.data.excerpt}</p>
-          <div class="more-link-wrapper">
-            <a class="more-link" href={postUrl}>Continue reading</a>
+        <div class="content-prose">
+          <p class="my-6">{post.data.excerpt}</p>
+          <div class="inline-block">
+            <a
+              class="inline-block border border-site-text px-3 py-1.5 text-nav transition-colors hover:bg-site-text hover:text-white"
+              href={postUrl}
+            >
+              Continue reading
+            </a>
           </div>
         </div>
       ) : null}
     </div>
   </article>
 </div>
-

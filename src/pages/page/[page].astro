@@ -35,10 +35,10 @@ const tags = await getAllTags();
   pageTitle={`JamieNordmeyer.net - Page ${currentPage}`}
   pageDescription="The various ramblings of a Portland code monkey"
 >
-  <div class="max-width">
-    <section id="main" class="main" role="main">
-      <h1 class="screen-reader-text">JamieNordmeyer.net Posts - Page {currentPage}</h1>
-      <div id="loop-container" class="loop-container">
+  <div class="layout-shell">
+    <section id="main" role="main" class="layout-main">
+      <h1 class="sr-only">JamieNordmeyer.net Posts - Page {currentPage}</h1>
+      <div id="loop-container">
         {posts.map((post) => <PostCard post={post} />)}
       </div>
       <Pagination currentPage={currentPage} totalPages={totalPages} />
@@ -47,4 +47,3 @@ const tags = await getAllTags();
     <Sidebar recentPosts={recentPosts} categories={categories} tags={tags} />
   </div>
 </Layout>
-

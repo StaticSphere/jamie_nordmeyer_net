@@ -30,15 +30,15 @@ const tags = await getAllTags();
 ---
 
 <Layout pageTitle={`JamieNordmeyer.net - ${page.data.title}`}>
-  <div class="max-width">
-    <main id="main" class="main" role="main">
-      <article class="entry">
-        <div class="post-container post-container-single">
-          <header class="post-header">
-            <h1 class="post-title">{page.data.title}</h1>
+  <div class="layout-shell">
+    <main id="main" role="main" class="layout-main">
+      <article class="relative mb-6">
+        <div class="surface-card surface-body mb-3">
+          <header class="mb-6">
+            <h1 class="heading-page">{page.data.title}</h1>
           </header>
 
-          <div class="post-content">
+          <div class="content-prose prose prose-neutral max-w-none prose-a:font-bold prose-a:underline prose-a:text-site-text">
             <Content />
           </div>
         </div>
@@ -48,5 +48,3 @@ const tags = await getAllTags();
     <Sidebar recentPosts={recentPosts} categories={categories} tags={tags} />
   </div>
 </Layout>
-
-

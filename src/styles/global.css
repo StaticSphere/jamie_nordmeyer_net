@@ -1,0 +1,125 @@
+@import "tailwindcss";
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Roboto", "Open Sans", sans-serif;
+  --color-site-bg: #ededed;
+  --color-site-text: #333333;
+  --color-site-dark: #333333;
+  --color-site-darker: #242424;
+  --color-site-light: #d4d4d4;
+  --color-site-muted: #757575;
+  --color-card-shadow: rgba(58, 58, 58, 0.2);
+  --spacing-page-x: 5.5556%;
+  --spacing-content-x: 4.6875%;
+  --shadow-card: 0 0 2px 0 var(--color-card-shadow);
+}
+
+@layer components {
+  .surface-card {
+    @apply bg-white shadow-card;
+  }
+
+  .surface-body {
+    @apply px-content-x py-6;
+  }
+
+  .layout-shell {
+    @apply mx-auto max-w-325 md:flex md:items-start md:gap-8;
+  }
+
+  .layout-main {
+    @apply mx-auto md:w-5/8;
+  }
+
+  .heading-page {
+    font-size: 1.125rem;
+    line-height: 1.333;
+    font-weight: 700;
+  }
+
+  .heading-site {
+    font-size: 1.3125rem;
+    line-height: 1.333;
+    font-weight: 700;
+  }
+
+  .text-meta {
+    @apply text-sm;
+    line-height: 1.715;
+  }
+
+  .text-nav {
+    @apply text-sm;
+    line-height: 1.715;
+  }
+
+  .media-frame {
+    @apply relative h-0 overflow-hidden;
+    padding-bottom: 50%;
+  }
+
+  .media-fill {
+    @apply absolute inset-0 h-full w-full object-cover;
+  }
+
+  .layout-primary {
+    margin-top: -5rem;
+    min-height: calc(100vh - 291px);
+  }
+
+  .footer-wrap {
+    margin-top: 3.75em;
+  }
+
+  .footer-credit {
+    margin-top: 1.875em;
+  }
+
+  .heading-archive {
+    @apply inline-block bg-site-darker px-3.5 py-1.5 font-light;
+    font-size: 1.125rem;
+    line-height: 1.333;
+  }
+
+  .content-prose .alignleft {
+    float: left;
+    margin: 0 1.5rem 1rem 0;
+  }
+
+  .content-prose .alignright {
+    float: right;
+    margin: 0 0 1rem 1.5rem;
+  }
+
+  .content-prose .aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 600px) {
+  .heading-page,
+  .heading-archive {
+    font-size: 1.3125rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .heading-page,
+  .heading-archive {
+    font-size: 1.75rem;
+    line-height: 1.357;
+  }
+}
+
+@media (max-width: 599px) {
+  .content-prose .alignleft,
+  .content-prose .alignright {
+    float: none;
+    margin: 0 auto 1.5rem;
+    display: block;
+  }
+}

@@ -58,46 +58,49 @@ const tagTerms = post.data.tags;
 ---
 
 <Layout pageTitle={`JamieNordmeyer.net - ${post.data.title}`}>
-  <div class="max-width">
-    <main id="main" class="main" role="main">
-      <article class="entry">
-        {post.data.featuredImage && (
-          <div class="featured-image">
-            <img src={post.data.featuredImage} alt={post.data.featuredImageAlt ?? ""} />
-          </div>
-        )}
-        <div class="post-container post-container-single">
-          <header class="post-header">
-            <h1 class="post-title">{post.data.title}</h1>
-            <div class="post-byline">Published {publishedDate} by {post.data.author}</div>
-          </header>
+  <div class="layout-shell">
+    <main id="main" role="main" class="layout-main">
+      <article class="relative mb-6">
+        <div class="surface-card">
+          {post.data.featuredImage && (
+            <div class="media-frame">
+              <img src={post.data.featuredImage} alt={post.data.featuredImageAlt ?? ""} class="media-fill" />
+            </div>
+          )}
 
-          <div class="post-content">
-            <Content />
-          </div>
+          <div class="surface-body mb-3">
+            <header class="mb-6">
+              <h1 class="heading-page">{post.data.title}</h1>
+              <div class="text-xs leading-normal">Published {publishedDate} by {post.data.author}</div>
+            </header>
 
-          <footer class="post-meta">
-            {categoryTerms.length > 0 && (
-              <p class="post-categories">
-                Categories: {categoryTerms.map((category: (typeof categoryTerms)[number], index: number) => (
-                  <>
-                    {index > 0 ? ", " : ""}
-                    <a href={getCategoryUrl(category.slug)}>{category.name}</a>
-                  </>
-                ))}
-              </p>
-            )}
-            {tagTerms.length > 0 && (
-              <p class="post-tags">
-                Tags: {tagTerms.map((tag: (typeof tagTerms)[number], index: number) => (
-                  <>
-                    {index > 0 ? ", " : ""}
-                    <a href={getTagUrl(tag.slug)}>{tag.name}</a>
-                  </>
-                ))}
-              </p>
-            )}
-          </footer>
+            <div class="content-prose prose prose-neutral max-w-none prose-a:font-bold prose-a:underline prose-a:text-site-text">
+              <Content />
+            </div>
+
+            <footer class="mt-6">
+              {categoryTerms.length > 0 && (
+                <p class="mb-4">
+                  Categories: {categoryTerms.map((category: (typeof categoryTerms)[number], index: number) => (
+                    <>
+                      {index > 0 ? ", " : ""}
+                      <a class="font-bold transition-colors hover:text-site-muted" href={getCategoryUrl(category.slug)}>{category.name}</a>
+                    </>
+                  ))}
+                </p>
+              )}
+              {tagTerms.length > 0 && (
+                <p class="mb-4">
+                  Tags: {tagTerms.map((tag: (typeof tagTerms)[number], index: number) => (
+                    <>
+                      {index > 0 ? ", " : ""}
+                      <a class="font-bold transition-colors hover:text-site-muted" href={getTagUrl(tag.slug)}>{tag.name}</a>
+                    </>
+                  ))}
+                </p>
+              )}
+            </footer>
+          </div>
         </div>
       </article>
     </main>
@@ -105,6 +108,4 @@ const tagTerms = post.data.tags;
     <Sidebar recentPosts={recentPosts} categories={categories} tags={tags} />
   </div>
 </Layout>
-
-
 

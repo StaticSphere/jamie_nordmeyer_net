@@ -21,12 +21,12 @@ const tags = await getAllTags();
 ---
 
 <Layout pageTitle={`Tag - ${tagName}`}>
-  <div class="max-width">
-    <section id="main" class="main" role="main">
-      <header class="archive-header">
-        <h1>Tag: {tagName}</h1>
+  <div class="layout-shell">
+    <section id="main" role="main" class="layout-main">
+      <header class="mb-3 text-white">
+        <h1 class="heading-archive">Tag: {tagName}</h1>
       </header>
-      <div class="loop-container">
+      <div id="loop-container">
         {posts.map((post) => <PostCard post={post} />)}
       </div>
     </section>
@@ -34,4 +34,3 @@ const tags = await getAllTags();
     <Sidebar recentPosts={recentPosts} categories={categories} tags={tags} />
   </div>
 </Layout>
-
