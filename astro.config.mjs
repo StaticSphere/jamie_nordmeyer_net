@@ -6,7 +6,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   output: "static",
   site: "https://staticsphere.github.io",
-  base: "/jamie_nordmeyer_net",
+  base: "/jamie_nordmeyer_net/",
   legacy: {
     collectionsBackwardsCompat: true
   },
