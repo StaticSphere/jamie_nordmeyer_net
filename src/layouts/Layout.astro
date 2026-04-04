@@ -40,9 +40,28 @@ const {
             <div id="site-title" class="heading-site">
               <a class="text-white transition-colors hover:text-site-light" href="/">JamieNordmeyer.net</a>
             </div>
-            <p class="text-meta m-0 text-site-light md:ml-1.5 md:inline-block">
+            <p class="text-meta m-0 text-site-light md:inline-block">
               The various ramblings of a Portland code monkey
             </p>
+          </div>
+          <div class="mb-6 md:float-right md:mb-0">
+            <ul class="mb-6 flex list-none items-center justify-center gap-5 p-0 md:mb-0 md:inline-flex">
+              <li>
+                <a class="text-white transition-colors hover:text-site-light" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/nordyj/" aria-label="LinkedIn">
+                  <i class="fab fa-linkedin text-base" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a class="text-white transition-colors hover:text-site-light" target="_blank" rel="noreferrer" href="https://github.com/StaticSphere" aria-label="GitHub">
+                  <i class="fab fa-github text-base" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a class="text-white transition-colors hover:text-site-light" target="_blank" rel="noreferrer" href="https://medium.com/@jamienordmeyer" aria-label="Medium">
+                  <i class="fab fa-medium text-base" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
           </div>
 
           <button
@@ -60,75 +79,6 @@ const {
           </button>
 
           <div id="menu-primary-container" class="hidden clear-both md:block">
-            <div class="mb-6 md:float-right md:mb-0">
-              <ul class="mb-6 flex list-none items-center justify-center gap-5 p-0 md:mb-0 md:inline-flex">
-                <li>
-                  <a class="text-white transition-colors hover:text-site-light" target="_blank" rel="noreferrer" href="https://twitter.com/NordyJ" aria-label="Twitter">
-                    <i class="fab fa-twitter text-base" aria-hidden="true"></i>
-                  </a>
-                </li>
-                <li>
-                  <a class="text-white transition-colors hover:text-site-light" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/nordyj/" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin text-base" aria-hidden="true"></i>
-                  </a>
-                </li>
-                <li>
-                  <a class="text-white transition-colors hover:text-site-light" target="_blank" rel="noreferrer" href="https://github.com/StaticSphere" aria-label="GitHub">
-                    <i class="fab fa-github text-base" aria-hidden="true"></i>
-                  </a>
-                </li>
-                <li>
-                  <a class="text-white transition-colors hover:text-site-light" target="_blank" rel="noreferrer" href="https://medium.com/@jamienordmeyer" aria-label="Medium">
-                    <i class="fab fa-medium text-base" aria-hidden="true"></i>
-                  </a>
-                </li>
-                <li>
-                  <a class="text-white transition-colors hover:text-site-light" target="_blank" rel="noreferrer" href="https://www.meetup.com/members/153519952/" aria-label="Meetup">
-                    <i class="fab fa-meetup text-base" aria-hidden="true"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    class="text-white transition-colors hover:text-site-light"
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://stackoverflow.com/users/339900/jamie-nordmeyer"
-                    aria-label="Stack Overflow"
-                  >
-                    <i class="fab fa-stack-overflow text-base" aria-hidden="true"></i>
-                  </a>
-                </li>
-              </ul>
-
-              <div class="relative inline-block md:ml-2 md:align-middle">
-                <button
-                  id="search-icon"
-                  class="text-white transition-colors hover:text-site-light"
-                  type="button"
-                  aria-expanded="false"
-                >
-                  <i class="fas fa-search" aria-hidden="true"></i>
-                  <span class="sr-only">Search</span>
-                </button>
-                <form
-                  id="search-form"
-                  role="search"
-                  method="get"
-                  action="/"
-                  class="mt-2 hidden w-full bg-white p-2 shadow-card md:absolute md:right-0 md:top-6.5 md:mt-0 md:w-60"
-                >
-                  <label class="sr-only" for="site-search">Search</label>
-                  <input
-                    id="site-search"
-                    type="search"
-                    class="w-full border border-site-light px-2 py-2 text-xs text-site-text"
-                    placeholder="Search..."
-                    name="s"
-                  />
-                </form>
-              </div>
-            </div>
-
             <nav
               id="menu-primary"
               role="navigation"
@@ -138,7 +88,7 @@ const {
               <ul class="m-0 list-none p-0">
                 <li class="mb-1.5 md:mr-2 md:mb-0 md:inline-block">
                   <a
-                    class="inline-block px-2 pb-0.5 text-white transition-colors hover:bg-white hover:text-site-text"
+                    class="inline-block px-2 first:pl-0 last:pl-0 pb-0.5 text-white transition-colors  hover:font-bold"
                     href="/about-me/"
                   >
                     About Me
