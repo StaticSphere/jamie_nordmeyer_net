@@ -10,6 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "generate:favicons": "node scripts/generate-favicons.mjs",
     "migrate:images": "node scripts/migrate-images.mjs",
     "migrate:wp-uploads": "pnpm migrate:images"
   },
