@@ -5,8 +5,8 @@ import tailwindcss from "@tailwindcss/vite";
 // https://astro.build/config
 export default defineConfig({
   output: "static",
-  site: "https://staticsphere.github.io",
-  base: "/jamie_nordmeyer_net/",
+  site: "https://jamienordmeyer.net",
+  base: "/",
   legacy: {
     collectionsBackwardsCompat: true
   },
