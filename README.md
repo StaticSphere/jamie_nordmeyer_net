@@ -56,6 +56,11 @@ pnpm build
 pnpm preview
 ```
 
+## SEO crawl files
+
+- `sitemap-index.xml` is generated automatically at build time by `@astrojs/sitemap`.
+- `robots.txt` is served from `public/robots.txt` and points crawlers at the sitemap URL.
+
 ## Key files
 
 - `src/content.config.ts` - Astro content collection schemas
@@ -68,3 +73,4 @@ pnpm preview
 - `src/pages/[year]/[month]/[day]/[slug].astro` - WordPress-style post routes
 - `src/pages/[slug].astro` - top-level page routes like `about-me`
 - `src/styles/global.css` - Tailwind entrypoint, theme tokens, and shared content helpers
+- `docs/domain-cutover.md` - DNS and GitHub Pages cutover/rollback checklist

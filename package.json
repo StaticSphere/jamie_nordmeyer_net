@@ -14,6 +14,7 @@
     "migrate:wp-uploads": "pnpm migrate:images"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.2",
     "@fortawesome/fontawesome-free": "^7.2.0",
     "astro": "^6.1.3",
     "sharp": "^0.34.5"
