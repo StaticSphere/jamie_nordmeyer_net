@@ -25,7 +25,7 @@ jobs:
         with:
           # path: . # The root location of your Astro project inside the repository. (optional)
           node-version: 24 # The specific version of Node that should be used to build your site. Defaults to 22. (optional)
-          package-manager: pnpm@10.33.0 # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+          package-manager: pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319 # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
           build-cmd: pnpm run build # The command to run to build your site. Runs the package build script/task by default. (optional)
           # env:
         # PUBLIC_POKEAPI: 'https://pokeapi.co/api/v2' # Use single quotation marks for the variable value. (optional)
