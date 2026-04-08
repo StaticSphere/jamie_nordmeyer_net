@@ -1,7 +1,6 @@
 ---
 title: "Moved Blog to Astro"
-excerpt: "After years of running my blog on WordPress, I finally decided that I've had enough of the constant maintenance of the
-WordPress backend…"
+excerpt: After years of running my blog on WordPress, I finally decided that I've had enough of the constant maintenance of the WordPress backend…
 date: "2026-04-05T13:29:00"
 author: "Jamie Nordmeyer"
 featuredImage: "../../../../assets/images/2026/04/artemis_ii_rocket.jpg"
