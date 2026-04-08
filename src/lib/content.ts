@@ -39,10 +39,6 @@ export function getPostUrl(post: PostEntry): string {
   return withBase(post.data.wpLink);
 }
 
-// export function getPageUrl(page: PageEntry): string {
-//   return page.data.wpLink;
-// }
-
 export function getCategoryUrl(slug: string): string {
   return withBase(`/category/${slug}/`);
 }
