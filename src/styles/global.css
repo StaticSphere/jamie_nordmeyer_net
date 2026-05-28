@@ -99,6 +99,11 @@
     margin-right: auto;
   }
 
+  .content-prose-certifications p > img {
+    width: min(200px, 100%);
+    height: auto;
+  }
+
   .content-prose :not(pre) > code {
     font-weight: 600;
   }

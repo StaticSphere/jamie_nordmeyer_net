@@ -8,7 +8,7 @@ import {
   getAllTags,
   getEntrySlug,
   getPageBySlug,
-  getRecentPosts
+  getRecentPosts,
 } from "../lib/content";
 
 export async function getStaticPaths() {
@@ -27,6 +27,7 @@ const { Content } = await render(page);
 const recentPosts = await getRecentPosts(5);
 const categories = await getAllCategories();
 const tags = await getAllTags();
+const isCertificationsPage = getEntrySlug(page) === "my-certifications";
 ---
 
 <Layout pageTitle={`JamieNordmeyer.net - ${page.data.title}`}>
@@ -38,7 +39,9 @@ const tags = await getAllTags();
             <h1 class="heading-page">{page.data.title}</h1>
           </header>
 
-          <div class="content-prose prose prose-neutral max-w-none prose-a:font-bold prose-a:underline prose-a:text-site-text prose-code:before:content-none prose-code:after:content-none">
+          <div
+            class={`content-prose prose prose-neutral max-w-none prose-a:font-bold prose-a:underline prose-a:text-site-text prose-code:before:content-none prose-code:after:content-none ${isCertificationsPage ? "content-prose-certifications" : ""}`}
+          >
             <Content />
           </div>
         </div>
