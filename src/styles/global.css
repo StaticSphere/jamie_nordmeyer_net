@@ -99,7 +99,8 @@
     margin-right: auto;
   }
 
-  .content-prose-certifications p > img {
+  .content-prose-certifications p > img,
+  .content-prose-certifications p > a > img {
     width: min(200px, 100%);
     height: auto;
   }
