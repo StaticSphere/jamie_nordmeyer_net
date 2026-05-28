@@ -8,9 +8,9 @@ wpLink: "/my-certifications/"
 ## AWS Solutions Architect - Associate (SAA-C03)
 
 [Credential Verification](https://cp.certmetrics.com/amazon/en/public/verify/credential/EM0V06DCSNR4QMG1)
-![SAA-C03](../../assets/images/aws-sa-associate-cert.png)
+[![SAA-C03](../../assets/images/aws-sa-associate-cert.png)](https://cp.certmetrics.com/amazon/en/public/verify/credential/EM0V06DCSNR4QMG1)
 
 ## AWS Developer - Associate (DVA-C02)
 
 [Credential Verification](https://cp.certmetrics.com/amazon/en/public/verify/credential/PVBX56WC7N4E1BCC)
-![DVA-C02](../../assets/images/aws-sa-associate-cert.png)
+[![DVA-C02](../../assets/images/aws-dev-associate-cert.png)](https://cp.certmetrics.com/amazon/en/public/verify/credential/PVBX56WC7N4E1BCC)
