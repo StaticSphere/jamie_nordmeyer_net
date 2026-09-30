@@ -2,7 +2,8 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
-import rehypeExternalLinks from 'rehype-external-links';
+import rehypeExternalLinks from "rehype-external-links";
+import { unified } from "@astrojs/markdown-remark";
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,14 +12,19 @@ export default defineConfig({
   base: "/",
   integrations: [sitemap()],
   legacy: {
-    collectionsBackwardsCompat: true
+    collectionsBackwardsCompat: true,
   },
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
   },
   markdown: {
-    rehypePlugins: [
-      [rehypeExternalLinks, { target: '_blank', rel: ['nofollow', 'noopener', 'noreferrer'] }]
-    ]
-  }
+    processor: unified({
+      rehypePlugins: [
+        [
+          rehypeExternalLinks,
+          { target: "_blank", rel: ["nofollow", "noopener", "noreferrer"] },
+        ],
+      ],
+    }),
+  },
 });
